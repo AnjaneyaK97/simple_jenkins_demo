@@ -8,22 +8,16 @@ pipeline{
           branch:'main'
       }
     }
-    // stage('Run Script'){
-    //   steps{
-    //     sh 'chmod +x script.sh'
-    //     sh './script.sh'
-    //   }
     stage('Compile Java Program') {
-  steps {
-    sh 'javac Hello.java'
+      steps {
+        sh 'javac Hello.java'
+      }
   }
-}
 
-stage('Run Java Program') {
-  steps {
-    sh 'java Hello'
+  stage('Run Java Program') {
+    steps {
+      sh 'java Hello'
+    }
   }
 }
-    // }
-  }
 }
